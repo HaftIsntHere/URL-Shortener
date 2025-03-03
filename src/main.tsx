@@ -11,7 +11,7 @@ const RootComponent = () => {
   useEffect(() => {
     const fetchUrls = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/urls");
+        const response = await fetch("https://searchbuddy.app/api/urls");
         const data = await response.json();
         return data;
       } catch (error) {
@@ -34,11 +34,11 @@ const RootComponent = () => {
     <StrictMode>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App />} />
+          <Route path="/shortener" element={<App />} />
           {urls.map((url: { URL: string; shortenTo: string }) => (
             <Route
               key={url.URL}
-              path={`/${url.URL}`}
+              path={`/shortener/${url.URL}`}
               element={<ShortenedURL url={url.shortenTo} />}
             />
           ))}

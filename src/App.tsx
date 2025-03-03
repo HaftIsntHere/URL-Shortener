@@ -61,7 +61,7 @@ function App() {
             alert("URL Shortened");
 
             fetch(
-              "http://localhost:3000/api/shortenURL?url=" + urlToShorten
+              "https://searchbuddy.app/api/shortenURL?url=" + urlToShorten
             ).then((d) => d.json().then((d) => setShortenedURL(d.newURL)));
           } else {
             alert("Enter a valid URL");

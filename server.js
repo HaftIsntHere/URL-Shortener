@@ -24,7 +24,7 @@ app.get("/api/shortenurl", async (req, res) => {
       data: { URL: shortenTo, shortenTo: url },
     });
 
-    res.json({ newURL: "localhost:5173/" + newUrl.URL });
+    res.json({ newURL: "searchbuddy.app/shortener/" + newUrl.URL });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Failed to shorten URL" });
